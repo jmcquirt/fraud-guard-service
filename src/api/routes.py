@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
+
+from src.api.dependencies import get_detector, get_preprocessor
 from src.schemas.payload import BatchTransactionPayload
 from src.schemas.response import BatchAnomalyDecision
-from src.services.preprocessor import FraudPreprocessor
 from src.services.detector import AnomalyDetector
-from src.api.dependencies import get_preprocessor, get_detector
+from src.services.preprocessor import FraudPreprocessor
 
 router = APIRouter()
 

@@ -1,6 +1,8 @@
 import time
+
 import joblib
 import numpy as np
+
 from src.schemas.payload import TransactionPayload
 from src.schemas.response import AnomalyDecision, BatchAnomalyDecision
 

@@ -1,6 +1,7 @@
 from fastapi import Request
-from src.services.preprocessor import FraudPreprocessor
+
 from src.services.detector import AnomalyDetector
+from src.services.preprocessor import FraudPreprocessor
 
 
 def get_preprocessor(request: Request) -> FraudPreprocessor:

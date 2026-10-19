@@ -1,9 +1,11 @@
 from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
-from src.config import settings
-from src.services.preprocessor import FraudPreprocessor
-from src.services.detector import AnomalyDetector
+
 from src.api.routes import router
+from src.config import settings
+from src.services.detector import AnomalyDetector
+from src.services.preprocessor import FraudPreprocessor
 
 
 @asynccontextmanager
