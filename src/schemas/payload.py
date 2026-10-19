@@ -2,10 +2,11 @@ from uuid import UUID, uuid4
 from pydantic import BaseModel, Field, field_validator
 import math
 
+
 class TransactionPayload(BaseModel):
     transaction_id: UUID = Field(default_factory=uuid4)
     amount: float = Field(..., gt=0.0, le=500000.0)
-    
+
     # PCA components V1 to V28
     v1: float = Field(...)
     v2: float = Field(...)
@@ -43,6 +44,7 @@ class TransactionPayload(BaseModel):
             if math.isnan(value) or math.isinf(value):
                 raise ValueError("NaN and Infinity are not permitted.")
         return value
+
 
 class BatchTransactionPayload(BaseModel):
     transactions: list[TransactionPayload] = Field(..., min_length=1, max_length=500)

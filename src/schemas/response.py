@@ -1,5 +1,6 @@
 from uuid import UUID
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
+
 
 class AnomalyDecision(BaseModel):
     transaction_id: UUID
@@ -7,6 +8,7 @@ class AnomalyDecision(BaseModel):
     anomaly_score: float
     threshold_applied: float
     latency_ms: float
+
 
 class BatchAnomalyDecision(BaseModel):
     results: list[AnomalyDecision]

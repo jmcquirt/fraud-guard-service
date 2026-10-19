@@ -1,6 +1,7 @@
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
 class ServiceSettings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="FRAUD_", env_file=".env", extra="ignore")
 
@@ -14,7 +15,8 @@ class ServiceSettings(BaseSettings):
     # Operational decision boundary
     anomaly_score_threshold: float = Field(
         default=-45.0,
-        description="Log-likelihood threshold below which a transaction is flagged as an anomaly"
+        description="Log-likelihood threshold below which a transaction is flagged as an anomaly",
     )
+
 
 settings = ServiceSettings()
