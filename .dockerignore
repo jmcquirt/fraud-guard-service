@@ -1,0 +1,22 @@
+# Git
+.git
+.gitignore
+
+# Python caching
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+.venv/
+venv/
+env/
+fraud-guard/
+
+# IDEs
+.vscode/
+.idea/
+
+# Local Environment variables
+.env

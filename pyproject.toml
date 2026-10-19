@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fraud-guard-service"
+version = "1.0.0"
+description = "Production ML Serving API for Fraud Detection"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn[standard]",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "scikit-learn",
+    "numpy",
+    "joblib"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "httpx",
+    "ruff"
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
