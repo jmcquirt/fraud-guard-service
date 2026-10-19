@@ -31,3 +31,6 @@ line-length = 100
 pythonpath = [
   "."
 ]
+
+[tool.ruff.lint]
+ignore = ["B008"]

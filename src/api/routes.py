@@ -25,5 +25,5 @@ def predict(
         decision = detector.predict_batch(payload.transactions, feature_matrix)
         return decision
 
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Inference failure: {str(e)}")
+    except RuntimeError as e:
+        raise HTTPException(status_code=500, detail=f"Inference failure: {e!s}")

@@ -41,9 +41,9 @@ class TransactionPayload(BaseModel):
     @field_validator("*", mode="before")
     @classmethod
     def reject_nan_and_inf(cls, value: float) -> float:
-        if isinstance(value, (int, float)):
-            if math.isnan(value) or math.isinf(value):
-                raise ValueError("NaN and Infinity are not permitted.")
+        # Combine the type check and the value check onto one line
+        if isinstance(value, (int, float)) and (math.isnan(value) or math.isinf(value)):
+            raise ValueError("NaN and Infinity are not permitted.")
         return value
 
 
